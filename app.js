@@ -10,6 +10,6 @@ const authRoutes = require("./routes/auth.routes");
 
 app.use("/api/v1", authRoutes);
 
-app.listen(port, () => { 
-  console.log("you are listen on port ${port}");
+app.listen(port, () => {
+  console.log(`you are listen on port ${port}`);
 });
