@@ -13,7 +13,11 @@ const connectDB = require("./database/connect");
 
 const authRoutes = require("./routes/auth.routes");
 
+const contactusRoutes = require("./routes/contactus.routes");
+
 app.use("/api/v1", authRoutes);
+
+app.use("/api/contact", contactusRoutes);
 
 app.use(errorMiddleware);
 
