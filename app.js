@@ -7,11 +7,15 @@ const port = 3000;
 
 app.use(express.json());
 
+const errorMiddleware = require("./middleware/error.middleware");
+
 const connectDB = require("./database/connect");
 
 const authRoutes = require("./routes/auth.routes");
 
 app.use("/api/v1", authRoutes);
+
+app.use(errorMiddleware);
 
 connectDB().then(() => {
   app.listen(port, () => {
